@@ -1,0 +1,9 @@
+name: BlockFountain
+main: main.Main
+version: 1.0
+description: plugin for making block fountain
+
+commands:
+  bf:
+    usage: /bf 
+    description: blockfountain plugin 

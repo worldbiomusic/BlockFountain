@@ -1,0 +1,31 @@
+계획
+
+config 로 thread id 저장해서 관리
+
+<>: 필수
+[]: 선택 (안하면 기본값 적용)
+※일단은 필수(<>)로 개발
+
+/bf add <name> [block] [power] [period] [blockLifeTime] [[x] [y] [z] | [player]]
+/bf start <name>
+/bf pause <name>
+/bf remove <name>
+/bf list
+/bf fix <name> [block] [power] [period] [blockLifeTime] [x] [y] [z]
+/bf tp <name>
+/bf info <name>: print info [name, block, power, period, blockLifeTime, x, y, z taskId, state, owner]  
+
+permission 추가하기 (op대신 permission 사용할까? 고민중)
+
+yml:
+name:
+  block: 
+  power: 
+  period: 
+  blockLifeTime: 
+  x: 
+  y: 
+  z: 
+  taskId: 
+  state: 
+  owner: 
