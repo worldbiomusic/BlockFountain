@@ -1,54 +1,54 @@
-#Plugin
+# Plugin
 BlockFountain
 
-#Minecraft version
+# Minecraft version
 1.12.2
 
-#Author
+# Author
 worldbiomusic
 
-#Version
+# Version
 1.0
 
-#Description
--ºí·°ºĞ¼ö ÇÃ·¯±×ÀÎ
+# Description
+-ë¸”ëŸ­ë¶„ìˆ˜ í”ŒëŸ¬ê·¸ì¸
 
--OP ÇÊ¿ä
+-OP í•„ìš”
 
--°¡Áö°í ³î±â ÁÁÀ½
+-ê°€ì§€ê³  ë†€ê¸° ì¢‹ìŒ
 
-#Commands
-<>: ÇÊ¼ö, 
-[]: ¼±ÅÃ
+# Commands
+<>: í•„ìˆ˜, 
+[]: ì„ íƒ
 
 ```
 /bf add <name> [ <block> <power> <period> <blockLifeTime> [<x> <y> <z> | <player>] ]
-:ºí·°ºĞ¼ö »ı¼º(¾÷µ¥ÀÌÆ®)ÈÄ ½ÃÀÛ 
-power: x, y, z¹æÇâÀÇ vector Å©±â
-period: ºí·° »ı¼º ÁÖ±â (ÃÊ)
-blockLifeTime: ºí·°ÀÌ »ı±äÈÄ ¾ø¾îÁö±â ±îÁöÀÇ ½Ã°£ (ÃÊ)
+:ë¸”ëŸ­ë¶„ìˆ˜ ìƒì„±(ì—…ë°ì´íŠ¸)í›„ ì‹œì‘ 
+power: x, y, zë°©í–¥ì˜ vector í¬ê¸°
+period: ë¸”ëŸ­ ìƒì„± ì£¼ê¸° (ì´ˆ)
+blockLifeTime: ë¸”ëŸ­ì´ ìƒê¸´í›„ ì—†ì–´ì§€ê¸° ê¹Œì§€ì˜ ì‹œê°„ (ì´ˆ)
 /bf start <name>
-:ºí·°ºĞ¼ö ½ÃÀÛ
+:ë¸”ëŸ­ë¶„ìˆ˜ ì‹œì‘
 /bf pause <name>
-:ºí·°ºĞ¼ö Àá½Ã ¸ØÃã
+:ë¸”ëŸ­ë¶„ìˆ˜ ì ì‹œ ë©ˆì¶¤
 /bf remove <name>
-:ºí·° ºĞ¼ö Á¦°Å
+:ë¸”ëŸ­ ë¶„ìˆ˜ ì œê±°
 /bf list
-:ºí·°ºĞ¼ö ¸®½ºÆ®
+:ë¸”ëŸ­ë¶„ìˆ˜ ë¦¬ìŠ¤íŠ¸
 /bf tp <name>
-:ºí·°ºĞ¼öÀÇ À§Ä¡·Î ÀÌµ¿
+:ë¸”ëŸ­ë¶„ìˆ˜ì˜ ìœ„ì¹˜ë¡œ ì´ë™
 /bf info <name>
 : print [name, block, power, period, blockLifeTime, x, y, z taskId, state, owner]
-:ºí·° ºĞ¼ö¿¡ ´ëÇÑ Á¤º¸ Ãâ·Â  
+:ë¸”ëŸ­ ë¶„ìˆ˜ì— ëŒ€í•œ ì •ë³´ ì¶œë ¥  
 ```
 
--bf add <name> À¸·Î °£´ÜÇÏ°Ô ÀÚ½ÅÀÇ À§Ä¡¿¡ ºí·°ºĞ¼ö »ı¼º °¡´É
+-bf add <name> ìœ¼ë¡œ ê°„ë‹¨í•˜ê²Œ ìì‹ ì˜ ìœ„ì¹˜ì— ë¸”ëŸ­ë¶„ìˆ˜ ìƒì„± ê°€ëŠ¥
 
--bf add ¸í·É¾î¿¡ x, y, z ¶Ç´Â playerNameÀ¸·Î À§Ä¡ ¼³Á¤ °¡´É
+-bf add ëª…ë ¹ì–´ì— x, y, z ë˜ëŠ” playerNameìœ¼ë¡œ ìœ„ì¹˜ ì„¤ì • ê°€ëŠ¥
 
--¿¹¿ÜÃ³¸® Àß ¾ÈµÇÀÖÀ½
+-ì˜ˆì™¸ì²˜ë¦¬ ì˜ ì•ˆë˜ìˆìŒ
 
-#YML
+# YML
 list.yml
 
 ```
