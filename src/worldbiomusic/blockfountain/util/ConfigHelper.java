@@ -1,4 +1,4 @@
-package util;
+package worldbiomusic.blockfountain.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class ConfigHelper {
 	
 	public void setBaseDirPathAndMakeBaseDir(String basePath)
 	{
-		this.baseDirPath = basePath;
+		ConfigHelper.baseDirPath = basePath;
 		
 		File baseDir = new File(basePath);
 		if( ! baseDir.exists())

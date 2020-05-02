@@ -1,4 +1,4 @@
-package listener;
+package worldbiomusic.blockfountain.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

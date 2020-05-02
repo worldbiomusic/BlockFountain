@@ -1,4 +1,4 @@
-package cmd;
+package worldbiomusic.blockfountain.cmd;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -6,6 +6,7 @@ import java.util.Set;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,7 +18,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import util.ConfigHelper;
+import worldbiomusic.blockfountain.util.ConfigHelper;
 
 public class CommandHelper implements CommandExecutor{
 
@@ -109,29 +110,69 @@ public class CommandHelper implements CommandExecutor{
 		return taskId;
 	}
 	
-//	/bf 0:add 1:<name> 2:[block] 3:[power] 4:[period] 5:[blockLifeTime] 6:[x] 7:[y] 8:[z]
+//	/bf 0:add 1:<name> 2:<block> 3:[power] 4:[period] 5:[blockLifeTime] [6:[x] 7:[y] 8:[z] | 6:[player]] 
 	boolean add(Player p, String[] args)
 	{
-		String name = args[1];
+		String name;
+		String blockName;
+		ItemStack block;
+		double power;
+		double period;
+		double blockLifeTime;
+		double x, y, z;
 		
-		String blockName = args[2];
-		ItemStack block = new ItemStack(Material.getMaterial(blockName));
 		
-		double power = Double.parseDouble(args[3]);
 		
-		double period = Double.parseDouble(args[4]);
-		/*
-		 * 1sec = 20tick
-		 * 0.5sec = 10tick
-		 * 0.25sec = 5tick
-		 */
+		name = args[1];
 		
-		double blockLifeTime = Double.parseDouble(args[5]);
-		
-		double x = Double.parseDouble(args[6]);
-		double y = Double.parseDouble(args[7]);
-		double z = Double.parseDouble(args[8]);
+		// bf add <name>
+		if (args.length == 3) {
+			blockName = args[2];
+			block = new ItemStack(Material.getMaterial(blockName));
+			power = 0.8;
+			period = 0.5;
+			blockLifeTime = 5;
+			
+			Location pLoc = p.getLocation();
 
+			x = pLoc.getX();
+			y = pLoc.getY();
+			z = pLoc.getZ();
+		} else {
+			blockName = args[2];
+			block = new ItemStack(Material.getMaterial(blockName));
+			
+			power = Double.parseDouble(args[3]);
+			
+			period = Double.parseDouble(args[4]);
+			/*
+			 * 1sec = 20tick
+			 * 0.5sec = 10tick
+			 * 0.25sec = 5tick
+			 */
+			
+			blockLifeTime = Double.parseDouble(args[5]);
+			
+			// player
+			if(args.length == 7) {
+				String pName = args[6];
+				Player targetP = Bukkit.getServer().getPlayer(pName);
+				Location pLoc = targetP.getLocation();
+
+				x = pLoc.getX();
+				y = pLoc.getY();
+				z = pLoc.getZ();
+				
+			} else if(args.length == 9) { // x, y, z
+				x = Double.parseDouble(args[6]);
+				y = Double.parseDouble(args[7]);
+				z = Double.parseDouble(args[8]);
+			} else {
+				return false;
+			}
+		}
+		
+		
 		p.sendMessage("BlockFountain: " + name + " added");
 		
 		// start
@@ -201,8 +242,6 @@ public class CommandHelper implements CommandExecutor{
 		
 		// scheduler를 직접 pause하는건 기능이 없음
 		// canceltask를 하고 config에 저장된 정보를 이용해서 다시 task를 생성해야 함
-		
-		// TODO: 마인크래프트 커맨드 사용할 떄도 sychronization 신경써 줄 필요 없나? -> 커뮤니티 질문
 		
 		int taskId = cfg.getInt(path + "taskId");
 		

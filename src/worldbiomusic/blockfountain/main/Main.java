@@ -1,11 +1,11 @@
-package main;
+package worldbiomusic.blockfountain.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import cmd.CommandHelper;
-import util.ConfigHelper;
+import worldbiomusic.blockfountain.cmd.CommandHelper;
+import worldbiomusic.blockfountain.util.ConfigHelper;
 
 public class Main extends JavaPlugin {
 	
@@ -25,8 +25,8 @@ public class Main extends JavaPlugin {
     void setup()
     {
     	// setup ConfigHelper
-    	ConfigHelper config = new ConfigHelper();
-    	config.setBaseDirPathAndMakeBaseDir(this.getDataFolder().getPath());
+    	ConfigHelper configHelper = new ConfigHelper();
+    	configHelper.setBaseDirPathAndMakeBaseDir(this.getDataFolder().getPath());
     	
     	addCommands();
     	registerEventListeners();
