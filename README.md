@@ -42,7 +42,7 @@ blockLifeTime: 블럭이 생긴후 없어지기 까지의 시간 (초)
 :블럭 분수에 대한 정보 출력  
 ```
 
--bf add <name> 으로 간단하게 자신의 위치에 블럭분수 생성 가능
+-bf add block 으로 간단하게 자신의 위치에 블럭분수 생성 가능
 
 -bf add 명령어에 x, y, z 또는 playerName으로 위치 설정 가능
 
