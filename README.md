@@ -46,6 +46,8 @@ blockLifeTime: 블럭이 생긴후 없어지기 까지의 시간 (초)
 
 -bf add 명령어에 x, y, z 또는 playerName으로 위치 설정 가능
 
+-bf add 명령어에 block설정할때 대문자(upper case)로 해야 함
+
 -예외처리 잘 안되있음
 
 # YML
